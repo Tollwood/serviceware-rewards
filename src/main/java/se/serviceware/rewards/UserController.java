@@ -28,7 +28,7 @@ public class UserController {
 
     @RequestMapping(path = "users/{username}", method = RequestMethod.GET)
     public User user(@PathVariable String username) {
-        User user = userRepository.findById(username).orElseThrow(() -> new IllegalArgumentException("username"));
+        User user = userRepository.findById(username).orElse(createUser(username));
         List<RewardEvent> events = rewardEventRepository.findRewardEventByUser(user);
         Integer totalExperience = events.stream()
                 .map(rewardEvent -> rewardEvent.getRewardEventType().getXp())
@@ -36,4 +36,9 @@ public class UserController {
         user.setXp(totalExperience);
         return user;
     }
+
+    private User createUser(String username) {
+        return userRepository.save(new User(username, 0, 10, 0,"Noob", "https://farm4.staticflickr.com/3247/2765310447_9490cb6780_m.jpg"));
+    }
+
 }
