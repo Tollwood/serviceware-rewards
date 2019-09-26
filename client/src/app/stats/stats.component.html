@@ -1,3 +1,17 @@
-<div class="container">
-  <button class="btn btn-primary">My Content</button>
+<div class="container-fluid">
+    <div class="row">
+        <div>
+          <div class="avatar">
+            <img alt="" [src]="currentUser.value.pictureUrl">
+        </div>
+        </div>
+        <div class="col-sm">
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="currentUser.value.xp" aria-valuemin="currentUser.value.xpPrev" aria-valuemax="currentUser.value.xpNext" [ngStyle]="{ 'width': progressBarPercentage }"></div>
+            </div>
+          </div>
+        <div>
+            <p class="tag">{{ tag }}</p>
+        </div>
+      </div>
 </div>

@@ -18,9 +18,9 @@ public class DataInitializationService {
         rankRepository.save(Rank.builder().minXp(31).maxXp(60).rank("Advanced").build());
         rankRepository.save(Rank.builder().minXp(61).maxXp(Integer.MAX_VALUE).rank("Master").build());
 
-        userRepository.save(User.builder().username("Jens").build());
-        userRepository.save(User.builder().username("Joe").build());
-        userRepository.save(User.builder().username("Tobi").build());
+        userRepository.save(User.builder().username("Jens").pictureUrl("https://farm4.staticflickr.com/3247/2765310447_9490cb6780_m.jpg").build());
+        userRepository.save(User.builder().username("Joe").pictureUrl("https://farm4.staticflickr.com/3247/2765310447_9490cb6780_m.jpg").build());
+        userRepository.save(User.builder().username("Tobi").pictureUrl("https://farm4.staticflickr.com/3247/2765310447_9490cb6780_m.jpg").build());
 
         rewardEventTypeRepository.save(RewardEventType.builder()
                 .id("rating_completed")
