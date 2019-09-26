@@ -16,9 +16,9 @@ public class UserController {
     public UserController(UserRepository userRepository, RewardEventRepository rewardEventRepository) {
         this.userRepository = userRepository;
         this.rewardEventRepository = rewardEventRepository;
-        userRepository.save(new User("Jens", 0, 10, 0, "Noob", ""));
-        userRepository.save(new User("Theo", 0, 10, 0, "Noob", ""));
-        userRepository.save(new User("Tobi", 0, 10, 0, "Noob", ""));
+        userRepository.save(new User("Jens", 0, 10, 0, "Noob", "https://farm4.staticflickr.com/3247/2765310447_9490cb6780_m.jpg"));
+        userRepository.save(new User("Theo", 0, 10, 0, "Noob", "https://farm4.staticflickr.com/3247/2765310447_9490cb6780_m.jpg"));
+        userRepository.save(new User("Tobi", 0, 10, 0, "Noob", "https://farm4.staticflickr.com/3247/2765310447_9490cb6780_m.jpg"));
     }
 
     @RequestMapping(path = "users", method = RequestMethod.GET)
