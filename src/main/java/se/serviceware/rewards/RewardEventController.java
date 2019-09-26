@@ -1,9 +1,12 @@
 package se.serviceware.rewards;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class RewardEventController {
@@ -13,7 +16,7 @@ public class RewardEventController {
     @Autowired
     private RewardEventTypeRepository rewardEventTypeRepository;
     @Autowired
-    private RewardEventTypeService rewardEventTypeService;
+    private DataInitializationService dataInitializationService;
     @Autowired
     private UserRepository userRepository;
 
