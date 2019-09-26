@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { StatsComponent } from './stats/stats.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { PoppyComponent } from './poppy/poppy.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PoppyComponent } from './poppy/poppy.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
