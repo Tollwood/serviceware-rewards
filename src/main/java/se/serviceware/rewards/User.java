@@ -4,13 +4,15 @@ public class User {
     private final long xp;
     private final long xpNext;
     private final long xpPrev;
-    private final int rank;
+    private final String rank;
+    private final String pictureUrl;
 
-    public User(long xp, long xpNext, long xpPrev, int rank) {
+    public User(long xp, long xpNext, long xpPrev, String rank, String pictureUrl) {
         this.xp = xp;
         this.xpNext = xpNext;
         this.xpPrev = xpPrev;
         this.rank = rank;
+        this.pictureUrl = pictureUrl;
     }
 
     public long getXp() {
@@ -25,7 +27,11 @@ public class User {
         return xpPrev;
     }
 
-    public int getRank() {
+    public String getRank() {
         return rank;
+    }
+
+    public String getPictureUrl() {
+        return pictureUrl;
     }
 }
