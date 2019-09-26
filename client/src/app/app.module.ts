@@ -11,9 +11,10 @@ import { PoppyComponent } from './poppy/poppy.component';
 import { StatsComponent } from './stats/stats.component';
 import { SparkleComponent } from './stats/sparkle/sparkle.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HelmetComponent } from './stats/helmet/helmet.component';
 
 @NgModule({
-	declarations: [ AppComponent, StatsComponent, LeaderboardComponent, PoppyComponent, SparkleComponent ],
+	declarations: [ AppComponent, StatsComponent, LeaderboardComponent, PoppyComponent, SparkleComponent, HelmetComponent ],
 	imports: [ BrowserModule, AppRoutingModule, HttpClientModule, MatDialogModule, BrowserAnimationsModule ],
 	bootstrap: [],
 	providers: [ { provide: APP_BASE_HREF, useValue: '/' } ],

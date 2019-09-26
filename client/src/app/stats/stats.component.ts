@@ -12,24 +12,18 @@ import { StatsService } from '../services/stats.service';
 export class StatsComponent implements OnInit {
 	userId: number = 123;
 	currentUser: User;
-	tag: string = 'XP';
-	progressBarPercentage: string;
-	// private timerId: NodeJS.Timer;
+	tag: string = 'Reward Points';
+	progressBarPercentageString: string;
+	progressBarPercentage: number = 0;
+	progressTargetBarPercentage: number = 0;
 
 	constructor(private statsService: StatsService, private _dialog: MatDialog) {
-		// this.currentUser = statsService.getStats(this.userId);
-		// this.progressBarPercentage =
-		//     (this.currentUser.xp - this.tempUser.xpPrev) * 100 / (this.tempUser.xpNext - this.tempUser.xpPrev) + '%';
 	}
 
 	ngOnInit() {
 		this.loadData();
 		setInterval(() => this.loadData(), 1000);
 	}
-
-	// ngOnDestroy(): void {
-	// 	clearTimeout(this.timerId);
-	// }
 
 	public openPoppy(): void {
 		this._dialog.open(PoppyComponent, {
@@ -41,11 +35,29 @@ export class StatsComponent implements OnInit {
 	private loadData(): void {
 		this.statsService.getStats(this.userId).subscribe((data) => {
 			this.currentUser = data;
-			this.progressBarPercentage =
+			this.progressTargetBarPercentage =
 				(this.currentUser.xp - this.currentUser.rank.minXp) *
 					100 /
-					(this.currentUser.rank.maxXp - this.currentUser.rank.minXp) +
-				'%';
+					(this.currentUser.rank.maxXp - this.currentUser.rank.minXp);
+			this.xpUpdate();
 		});
+	}
+
+	progressBarClass : string = "";
+	public xpUpdate(): void {
+		console.log(this.progressTargetBarPercentage + " : " + this.progressBarPercentage);
+		if (this.progressBarPercentage !== this.progressTargetBarPercentage) {
+			this.progressBarClass = "progress-bar-striped progress-bar-animated";
+			this.progressBarPercentage = this.progressBarPercentage + Math.ceil((this.progressTargetBarPercentage - this.progressBarPercentage) / 10);
+			this.progressBarPercentageString = this.progressBarPercentage + "%";
+			setTimeout(
+				() => {
+					this.xpUpdate();
+				}, 
+				10
+			)
+		} else {
+			this.progressBarClass = "";
+		}
 	}
 }
