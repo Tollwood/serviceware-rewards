@@ -6,7 +6,7 @@
         </div>
         </div>
         <div class="col-sm">
-            <p><ngb-progressbar value="500" type="info"></ngb-progressbar></p>
+            <ngb-progressbar value="user.currentXp - user.previousLevelXp" [max]="user.nextLevelXp - user.previousLevelXp"></ngb-progressbar>
           </div>
         <div class="col-sm">
             <ng-template>
