@@ -1,17 +1,17 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm">
+        <div>
           <div class="avatar">
-            <img alt="" src="http://lorempixel.com/100/100/people/9/">
+            <img alt="" [src]="currentUser.value.pictureUrl">
         </div>
         </div>
         <div class="col-sm">
-            <ngb-progressbar value="user.currentXp - user.previousLevelXp" [max]="user.nextLevelXp - user.previousLevelXp"></ngb-progressbar>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="currentUser.value.xp" aria-valuemin="currentUser.value.xpPrev" aria-valuemax="currentUser.value.xpNext" [ngStyle]="{ 'width': progressBarPercentage }"></div>
+            </div>
           </div>
-        <div class="col-sm">
-            <ng-template>
-              <p>{{ tag }}</p>
-            </ng-template>
+        <div>
+            <p class="tag">{{ tag }}</p>
         </div>
       </div>
 </div>

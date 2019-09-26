@@ -1,6 +1,12 @@
 $font-stack:    Helvetica, sans-serif;
 $primary-color: #333;
 
+.row {
+  display:flex;
+  align-items:center;
+  margin: 10px;
+}
+
 .avatar img {
   vertical-align: middle;
   width: 50px;
@@ -8,3 +14,10 @@ $primary-color: #333;
   border-radius: 50%;
 }
 
+.progress-bar {
+  vertical-align: middle;
+}
+
+.tag {
+  margin: auto;
+}
