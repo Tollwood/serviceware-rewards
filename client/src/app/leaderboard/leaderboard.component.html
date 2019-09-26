@@ -7,13 +7,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let user of userInfo; index as i" [ngClass]="{ 'table-primary': user.name === currentUserName }">
+    <tr *ngFor="let user of userInfo; index as i" [ngClass]="{ 'table-primary': user.username === currentUserName }">
       <th>{{ i+1 }}</th>
       <td class="user-name-container">
         <img class="user-image img-fluid" [src]="user.pictureUrl">
         <div>
-          <div>{{ user.name }}</div>
-          <div class="user-rank text-secondary">{{ user.rank }}</div>
+          <div>{{ user.username }}</div>
+          <div class="user-rank text-secondary">{{ user.rank.rank }}</div>
         </div>
       </td>
       <td>{{ user.xp }}</td>

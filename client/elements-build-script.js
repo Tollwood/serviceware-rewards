@@ -3,7 +3,8 @@ const concat = require('concat');
 const files = [
   './dist/serviceware-rewards/runtime.js',
   './dist/serviceware-rewards/polyfills.js',
-  './dist/serviceware-rewards/main.js'
+  './dist/serviceware-rewards/main.js',
+  './dist/serviceware-rewards/styles.js'
 ];
 
 concat(files, './dist/serviceware-rewards/serviceware-rewards-element.js');

@@ -1,14 +1,12 @@
+import { Rank } from './rank.model';
 
 export class User {
-  public id: number;
-  public name: string;
-  public rank: string;
-  public xp: number;
-  public xpNext: number;
-  public xpPrev: number;
-  public pictureUrl: string;
+	public username: string;
+	public rank: Rank;
+	public xp: number;
+	public pictureUrl: string;
 
-  constructor(init?: Partial<User>) {
-    Object.assign(this, init);
-  }
+	constructor(init?: Partial<User>) {
+		Object.assign(this, init);
+	}
 }
