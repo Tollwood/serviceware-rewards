@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { User } from '../models/user.model';
 import { PoppyComponent } from '../poppy/poppy.component';
@@ -7,9 +7,12 @@ import { StatsService } from '../services/stats.service';
 @Component({
 	selector: 'app-stats',
 	templateUrl: './stats.component.html',
-	styleUrls: [ './stats.component.scss' ]
+	styleUrls: [ './stats.component.scss' ],
+	encapsulation: ViewEncapsulation.ShadowDom
 })
 export class StatsComponent implements OnInit {
+	@Input('height') height: string = '40px';
+
 	userId: number = 123;
 	currentUser: User;
 	tag: string = 'Reward Points';
@@ -27,7 +30,7 @@ export class StatsComponent implements OnInit {
 
 	public openPoppy(): void {
 		this._dialog.open(PoppyComponent, {
-			width: '400px',
+			width: '500px',
 			autoFocus: false
 		});
 	}

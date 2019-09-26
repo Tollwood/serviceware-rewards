@@ -1,8 +1,8 @@
-<div class="container-fluid" style="padding: 5px;" (click)="openPoppy()">
+<div class="container-fluid" style="min-width: 250px; height: 100%; max-height: 50px;" (click)="openPoppy()">
   <div class="row">
     <div>
       <div class="avatar" style="position:relative">
-        <img alt="" [src]="currentUser.pictureUrl">
+     	<img alt="" [src]="currentUser?.pictureUrl" [style.height]='height' [style.width]='height'>
         <app-sparkle class="sparkleApp" style="position:absolute;left:20px;top:-18px;z-index: 1;"></app-sparkle>
         <app-helmet class="helmetApp"></app-helmet>
     </div>
@@ -12,8 +12,6 @@
         <div [class]="'progress-bar ' + prograssBarClass" role="progressbar" aria-valuenow="currentUser.xp" aria-valuemin="currentUser.rank.minXp" aria-valuemax="currentUser.rank.maxXp" [ngStyle]="{ 'width': progressBarPercentageString }"></div>
         </div>
       </div>
-    <div>
-        <p class="tag">{{ tag }}</p>
     </div>
   </div>
 </div>
