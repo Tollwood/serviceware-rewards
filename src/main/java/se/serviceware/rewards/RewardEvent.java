@@ -2,10 +2,7 @@ package se.serviceware.rewards;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import lombok.*;
 
@@ -20,8 +17,10 @@ class RewardEvent {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private String rewardEventTypeId;
-    private String userId;
+    @ManyToOne
+    private RewardEventType rewardEventType;
+    @ManyToOne
+    private User user;
     @Builder.Default
     private Date timestamp = new Date();
 

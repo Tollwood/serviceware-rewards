@@ -6,5 +6,5 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface RewardEventRepository extends CrudRepository<RewardEvent, String> {
 
-    public List<RewardEvent> findRewardEventByUserId(String userId);
+    public List<RewardEvent> findRewardEventByUser(User user);
 }
