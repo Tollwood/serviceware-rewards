@@ -23,12 +23,16 @@ public class RewardEventController {
     @PostMapping("/users/{userId}/events/{eventTypeId}")
     public void createEvent(@PathVariable("userId") String userId, @PathVariable("eventTypeId") String eventTypeId) {
         RewardEventType rewardEventType = rewardEventTypeRepository.findById(eventTypeId).orElseThrow(() -> new IllegalArgumentException("eventTypeId"));
-        User user = userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("userId"));
+        User user = userRepository.findById(userId).orElse(createUser(userId));
         RewardEvent rewardEvent = RewardEvent.builder()
                 .rewardEventType(rewardEventType)
                 .user(user)
                 .build();
         rewardEventRepository.save(rewardEvent);
+    }
+
+    private User createUser(String userId) {
+        return userRepository.save(User.builder().username(userId).build());
     }
 
     @GetMapping("/users/{userId}/events")
