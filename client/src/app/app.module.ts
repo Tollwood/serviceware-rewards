@@ -9,19 +9,12 @@ import { AppComponent } from './app.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { PoppyComponent } from './poppy/poppy.component';
 import { StatsComponent } from './stats/stats.component';
-<<<<<<< Updated upstream
+import { SparkleComponent } from './stats/sparkle/sparkle.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-	declarations: [ AppComponent, StatsComponent, LeaderboardComponent, PoppyComponent ],
-	imports: [ BrowserModule, AppRoutingModule, HttpClientModule, MatDialogModule, BrowserAnimationsModule ],
-=======
-import { SparkleComponent } from './stats/sparkle/sparkle.component';
-
-@NgModule({
 	declarations: [ AppComponent, StatsComponent, LeaderboardComponent, PoppyComponent, SparkleComponent ],
-	imports: [ BrowserModule, AppRoutingModule, HttpClientModule ],
->>>>>>> Stashed changes
+	imports: [ BrowserModule, AppRoutingModule, HttpClientModule, MatDialogModule, BrowserAnimationsModule ],
 	bootstrap: [],
 	providers: [ { provide: APP_BASE_HREF, useValue: '/' } ],
 	entryComponents: [ StatsComponent, PoppyComponent, LeaderboardComponent ]
