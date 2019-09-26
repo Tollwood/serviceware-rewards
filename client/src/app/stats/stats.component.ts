@@ -16,7 +16,7 @@ export class StatsComponent implements OnInit {
 
   tempUser : User = new User(
     {
-      name : 'Loic Pennec',
+      name : 'Paul Pennec',
       rank : 'Dungeon Master',
       xp : 125,
       xpNext : 200,
@@ -29,10 +29,6 @@ export class StatsComponent implements OnInit {
       //this.currentUser = statsService.getStats(this.userId); 
       this.currentUser = of(this.tempUser);
       this.progressBarPercentage = (this.tempUser.xp - this.tempUser.xpPrev) * 100 / (this.tempUser.xpNext - this.tempUser.xpPrev) + '%';
-      console.log(this.tempUser.xp);
-      console.log(this.tempUser.xpNext);
-      console.log(this.tempUser.xpPrev);
-      console.log(this.progressBarPercentage);
   }
 
   ngOnInit() {
