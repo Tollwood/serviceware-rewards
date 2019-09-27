@@ -9,7 +9,7 @@
                 [style.width]="height + 'px'">
             <app-sparkle class="sparkleApp" [size]="height * 1.6" style="position: absolute; z-index: 1;"
                 [ngStyle]="{ 'left': (height/5) + 'px', 'top': (-height/2) + 'px' }"></app-sparkle>
-            <app-helmet [imagePath]="helmetPath" class="helmetApp"></app-helmet>
+            <!-- <app-helmet [imagePath]="helmetPath" class="helmetApp"></app-helmet> -->
         </div>
         <div class="flex-grow-1 ml-2">
             <div class="d-flex flex-column">
@@ -19,7 +19,7 @@
                         [ngStyle]="{ 'width': progressBarPercentageString }" [style.background-color]="color">
                     </div>
                 </div>
-                <div class="d-flex flex-row justify-content-between small ml-2 mr-2" [style.color]="color"
+                <div class="d-flex flex-row justify-content-between small ml-2 mr-2" [style.color]="txcolor"
                     style="margin-bottom: -6px;">
                     <div>{{ currentUser?.username }}</div>
                     <div>{{ currentUser?.xp }} / {{ currentUser?.rank.maxXp }} XP</div>

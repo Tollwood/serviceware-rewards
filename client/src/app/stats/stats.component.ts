@@ -12,6 +12,7 @@ import { StatsService } from '../services/stats.service';
 export class StatsComponent implements OnInit {
 	@Input('height') height: number = 40;
 	@Input('color') color: string = '#007bff';
+	@Input('text-color') txcolor: string = '#ffffff';
 
 	userId: number = 123;
 	public currentUser: User;
@@ -21,15 +22,13 @@ export class StatsComponent implements OnInit {
 	progressBarPercentage: number = 0;
 	progressTargetBarPercentage: number = 0;
 	leaderboardRank: number = 2;
-	helmetPath : string;
-	helmetRank1 : string = "/assets/crown.png";
-	helmetRank2 : string = "/assets/viking.png";
-	helmetRank3 : string = "/assets/strawhat.png";
-	helmetRankOther : string = "/assets/blank.png";
+	helmetPath: string;
+	helmetRank1: string = './assets/crown.png';
+	helmetRank2: string = './assets/viking.png';
+	helmetRank3: string = './assets/strawhat.png';
+	helmetRankOther: string = './assets/blank.png';
 
-
-	constructor(private statsService: StatsService, private _dialog: MatDialog) {
-	}
+	constructor(private statsService: StatsService, private _dialog: MatDialog) {}
 
 	ngOnInit() {
 		this.loadData();
@@ -51,34 +50,34 @@ export class StatsComponent implements OnInit {
 				100 /
 				(this.currentUser.rank.maxXp - this.currentUser.rank.minXp);
 			this.xpUpdate();
-			this.helmetUpdate();
+			// this.helmetUpdate();
 		});
-		this.statsService.getLeaderboard().subscribe(x => {this.userInfo = x; });
+		this.statsService.getLeaderboard().subscribe((x) => {
+			this.userInfo = x;
+		});
 	}
 
 	progressBarClass: string = '';
 	public xpUpdate(): void {
 		if (this.progressBarPercentage !== this.progressTargetBarPercentage) {
-			this.progressBarClass = "progress-bar-striped progress-bar-animated";
+			this.progressBarClass = 'progress-bar-striped progress-bar-animated';
 			this.progressBarPercentage = this.progressTargetBarPercentage;
-			this.progressBarPercentageString = this.progressBarPercentage + "%";
+			this.progressBarPercentageString = this.progressBarPercentage + '%';
 		} else {
 			this.progressBarClass = '';
 		}
 	}
 
-	public helmetUpdate(){
-		this.leaderboardRank = this.userInfo.findIndex((x) => (x.username === this.currentUser.username)) + 1;
-		console.log(this.userInfo);
-		console.log(this.leaderboardRank);
-		switch(this.leaderboardRank) {
+	public helmetUpdate() {
+		this.leaderboardRank = this.userInfo.findIndex((x) => x.username == this.currentUser.username) + 1;
+		switch (this.leaderboardRank) {
 			case 1: {
 				this.helmetPath = this.helmetRank1;
-			   	break;
+				break;
 			}
 			case 2: {
 				this.helmetPath = this.helmetRank2;
-			   break;
+				break;
 			}
 			case 3: {
 				this.helmetPath = this.helmetRank3;
@@ -86,8 +85,8 @@ export class StatsComponent implements OnInit {
 			}
 			default: {
 				this.helmetPath = this.helmetRankOther;
-			   break;
+				break;
 			}
-		 }
+		}
 	}
 }

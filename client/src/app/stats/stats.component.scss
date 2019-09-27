@@ -3,46 +3,46 @@ sans-serif;
 $primary-color: #333;
 
 .row {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .progress {
-  height: 12px;
+    height: 12px;
 }
 
 .progress-bar {
-  vertical-align: middle;
+    vertical-align: middle;
 }
-2
+
 .tag {
-  margin: auto;
+    margin: auto;
 
 }
 
 .avatar {
-  position: relative;
-  transform: scale(1);
+    position: relative;
+    transform: scale(1);
 }
 
 .avatar .userPicture {
-  border-radius: 50%;
-  object-fit: contain;
-  border: 1px solid gray;
+    vertical-align: middle;
+    border-radius: 50%;
+    border: 1px solid gray;
 }
 
 .sparkleApp {
-  position:absolute;
-  left:3px;
-  top:-30px;
-  z-index: 1;
+    position: absolute;
+    left: 3px;
+    top: -30px;
+    z-index: 1;
 }
 
 .helmetApp {
-  position:absolute;
-  height: 30px;
-  left: -12px;
-  top: -22px;
-  transform: rotate(-35deg);
-  z-index: 1;
+    position: absolute;
+    height: 30px;
+    left: -12px;
+    top: -22px;
+    transform: rotate(-35deg);
+    z-index: 1;
 }
