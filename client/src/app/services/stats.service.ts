@@ -30,14 +30,12 @@ export class StatsService {
             );
     }
 
-    public getActivities() {
-        return (
-            this.httpClient
-                .get(
-                    `https://serviceware-rewards.herokuapp.com/users/${this.userName}/events`
-                )
-                // .get('https://serviceware-rewards.herokuapp.com/users/Jens/events')
-                .pipe(map((x: Array<Activity>) => x.map(y => new Activity(y))))
-        );
-    }
+	public getActivities() {
+		return (
+			this.httpClient
+				.get(`https://serviceware-rewards.herokuapp.com/users/${this.userName}/events`)
+				// .get('https://serviceware-rewards.herokuapp.com/users/Jens/events')
+				.pipe(map((x: Array<Activity>) => x.map((y) => new Activity(y))))
+		);
+	}
 }
