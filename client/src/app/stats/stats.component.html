@@ -1,11 +1,15 @@
 <div class="container-fluid" style="min-width: 250px;" [style.height]="height" (click)="openPoppy()">
+  <div class="pyro">
+    <div class="before"></div>
+    <div class="after"></div>
+  </div>
   <div class="row">
     <div>
       <div class="avatar" style="position:relative">
-        <img alt="" [src]="currentUser?.pictureUrl" [style.height]="height + 'px'" [style.width]="height + 'px'">
+        <img class="userPicture" alt="" [src]="currentUser?.pictureUrl" [style.height]="height + 'px'" [style.width]="height + 'px'">
         <app-sparkle class="sparkleApp" [size]="height * 1.6" style="position: absolute; z-index: 1;"
             [ngStyle]="{ 'left': (height/5) + 'px', 'top': (-height/2) + 'px' }"></app-sparkle>
-        <!-- <app-helmet class="helmetApp"></app-helmet> -->
+        <app-helmet [imagePath]="helmetPath" class="helmetApp"></app-helmet>
       </div>
     </div>
     <div class="col">
@@ -16,5 +20,4 @@
         </div>
       </div>
     </div>
-  </div>
 </div>

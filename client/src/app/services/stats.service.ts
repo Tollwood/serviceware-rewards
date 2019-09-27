@@ -2,17 +2,17 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { User } from '../models/user.model';
-import { Activity } from './../models/activity.model';
+import { Activity } from '../models/activity.model';
 
 @Injectable({
-    providedIn: 'root'
+	providedIn: 'root'
 })
 export class StatsService {
-    constructor(private httpClient: HttpClient) {}
+	constructor(private httpClient: HttpClient) {}
 
-    public userName = 'Jens';
-
-    public getStats(userId: number) {
+	public userName = 'Jens';
+	
+	public getStats(userId: number) {
         return this.httpClient
             .get(
                 `https://serviceware-rewards.herokuapp.com/users/${this.userName}`
@@ -20,7 +20,7 @@ export class StatsService {
             .pipe(map(x => new User(x)));
     }
 
-    public getLeaderboard() {
+	public getLeaderboard() {
         return this.httpClient
             .get('https://serviceware-rewards.herokuapp.com/users')
             .pipe(

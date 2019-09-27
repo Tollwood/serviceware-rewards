@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-helmet',
@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./helmet.component.scss']
 })
 export class HelmetComponent implements OnInit {
-  imagePath: string ="./viking.png";
-  constructor() { }
+  @Input() imagePath : string;
+
+  constructor() { 
+  }
 
   ngOnInit() {
+    console.log(this.imagePath);
   }
 
 }

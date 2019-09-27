@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <div class="row" *ngFor="let product of products; index as i">
+    <div>
+      <img class="img-fluid product-image" src="{{ product.imagePath }}" alt="Card image cap">
+    </div>
+    <div class="col-sm">
+      <p class="title">{{ product.name }}</p>
+      <p class="text">{{ product.description }}</p>
+      <p class="text">{{ product.price }}€</p>
+    </div>
+    <div class="text-center" style="margin: 10px;"><a href="#" class="btn btn-primary">Add</a></div>
+  </div>
+</div>
