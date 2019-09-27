@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-sparkle',
-  templateUrl: './sparkle.component.html',
-  styleUrls: ['./sparkle.component.scss']
+    selector: 'app-sparkle',
+    templateUrl: './sparkle.component.html',
+    styleUrls: ['./sparkle.component.scss']
 })
 export class SparkleComponent implements OnInit {
-  constructor() { }
+    @Input('size') size: number = 80;
 
-  ngOnInit() {
-  }
+    constructor() {}
 
+    ngOnInit() {}
 }

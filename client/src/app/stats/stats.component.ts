@@ -7,11 +7,10 @@ import { StatsService } from '../services/stats.service';
 @Component({
 	selector: 'app-stats',
 	templateUrl: './stats.component.html',
-	styleUrls: [ './stats.component.scss' ],
-	encapsulation: ViewEncapsulation.ShadowDom
+	styleUrls: [ './stats.component.scss' ]
 })
 export class StatsComponent implements OnInit {
-	@Input('height') height: string = '40px';
+	@Input('height') height: number = 40;
 
 	userId: number = 123;
 	currentUser: User;
@@ -56,7 +55,7 @@ export class StatsComponent implements OnInit {
 			setTimeout(
 				() => {
 					this.xpUpdate();
-				}, 
+				},
 				10
 			)
 		} else {
