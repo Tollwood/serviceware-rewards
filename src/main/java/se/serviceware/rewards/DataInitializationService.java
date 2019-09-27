@@ -31,17 +31,29 @@ public class DataInitializationService {
         rankRepository.save(Rank.builder().minXp(230).maxXp(Integer.MAX_VALUE).rank("Legendary Hero").build());
 
         User jens = userRepository.save(User.builder().username("Jens").build());
-        User joe = User.builder().username("Joe").build();
+        User joe = User.builder().username("Joe")
+                .pictureUrl("https://live.staticflickr.com/28/44754476_5ed94c4288.jpg")
+                .build();
         userRepository.save(joe);
-        User tobi = User.builder().username("Tobi").build();
+        User tobi = User.builder().username("Tobi")
+                .pictureUrl("https://farm4.staticflickr.com/3627/3504127343_0d8d3dd652_m.jpg")
+                .build();
         userRepository.save(tobi);
-        User max = User.builder().username("Max").build();
+        User max = User.builder().username("Max")
+                .pictureUrl("https://live.staticflickr.com/3078/2584805566_d4011cb2a2_m.jpg").build();
         userRepository.save(max);
-        User lisa = User.builder().username("Lisa").build();
+        User lisa = User.builder().username("Lisa")
+                .pictureUrl("https://live.staticflickr.com/65535/47721974362_585a835e0a.jpg")
+                .build();
         userRepository.save(lisa);
-        User anna = User.builder().username("Anna").build();
+        User anna = User.builder()
+                .username("Anna")
+                .pictureUrl("https://live.staticflickr.com/4034/4410923630_6d8aaa409e.jpg")
+                .build();
         userRepository.save(anna);
-        User mirabelle = User.builder().username("Mirabelle").build();
+        User mirabelle = User.builder().username("Mirabelle")
+                .pictureUrl("https://farm3.staticflickr.com/2789/4267382070_bdd652bdce_m.jpg")
+                .build();
         userRepository.save(mirabelle);
 
         rating_completed = rewardEventTypeRepository.save(RewardEventType.builder()
