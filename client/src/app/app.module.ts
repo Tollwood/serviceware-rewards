@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { PoppyComponent } from './poppy/poppy.component';
 import { HelmetComponent } from './stats/helmet/helmet.component';
+<<<<<<< HEAD
 import { SparkleComponent } from './stats/sparkle/sparkle.component';
 import { StatsComponent } from './stats/stats.component';
 
@@ -32,6 +33,13 @@ import { StatsComponent } from './stats/stats.component';
 		MatTabsModule,
 		BrowserAnimationsModule
 	],
+=======
+import { StoreComponent } from './store/store.component';
+
+@NgModule({
+	declarations: [ AppComponent, StatsComponent, LeaderboardComponent, PoppyComponent, SparkleComponent, HelmetComponent, StoreComponent ],
+	imports: [ BrowserModule, AppRoutingModule, HttpClientModule, MatDialogModule, BrowserAnimationsModule ],
+>>>>>>> Store
 	bootstrap: [],
 	providers: [ { provide: APP_BASE_HREF, useValue: '/' } ],
 	entryComponents: [ StatsComponent, PoppyComponent, LeaderboardComponent, ActivitiesComponent ]
