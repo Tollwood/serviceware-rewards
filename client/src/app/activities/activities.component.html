@@ -1,0 +1,22 @@
+<table class="table table-sm table-striped">
+  <thead>
+    <tr>
+      <th scope="col">User</th>
+      <th scope="col">Event</th>
+      <th scope="col">XP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let activity of activities; index as i">
+      <td class="user-name-container">
+        <img class="user-image img-fluid" [src]="activity.user.pictureUrl">
+        <div>
+          <div>{{ activity.user.username }}</div>
+          <div class="user-rank text-secondary">{{ activity.user.rank }}</div>
+        </div>
+      </td>
+      <td>{{ activity.rewardEventType?.id}}</td>
+      <td>{{ activity.rewardEventType?.xp }}</td>
+    </tr>
+  </tbody>
+</table>

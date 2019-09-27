@@ -5,20 +5,36 @@ import { createCustomElement } from '@angular/elements';
 import { MatDialogModule, MatTabsModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ActivitiesComponent } from './activities/activities.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { PoppyComponent } from './poppy/poppy.component';
-import { SparkleComponent } from './stats/sparkle/sparkle.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HelmetComponent } from './stats/helmet/helmet.component';
+import { SparkleComponent } from './stats/sparkle/sparkle.component';
+import { StatsComponent } from './stats/stats.component';
 
 @NgModule({
-	declarations: [ AppComponent, StatsComponent, LeaderboardComponent, PoppyComponent, SparkleComponent, HelmetComponent ],
-	imports: [ BrowserModule, AppRoutingModule, HttpClientModule, MatDialogModule, MatTabsModule, BrowserAnimationsModule ],
+	declarations: [
+		AppComponent,
+		StatsComponent,
+		LeaderboardComponent,
+		PoppyComponent,
+		SparkleComponent,
+		HelmetComponent,
+		ActivitiesComponent
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		HttpClientModule,
+		MatDialogModule,
+		MatTabsModule,
+		BrowserAnimationsModule
+	],
 	bootstrap: [],
 	providers: [ { provide: APP_BASE_HREF, useValue: '/' } ],
-	entryComponents: [ StatsComponent, PoppyComponent, LeaderboardComponent ]
+	entryComponents: [ StatsComponent, PoppyComponent, LeaderboardComponent, ActivitiesComponent ]
 })
 export class AppModule implements DoBootstrap {
 	private readonly _injector: Injector;

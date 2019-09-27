@@ -1,0 +1,20 @@
+.user-name-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.user-image {
+  height: 42px;
+  margin-right: 10px;
+}
+
+.user-rank {
+  font-size: small;
+  margin-top: -5px;
+}
+
+td,
+th {
+  vertical-align: middle;
+}
