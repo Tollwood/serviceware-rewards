@@ -12,7 +12,7 @@ import { StatsService } from '../services/stats.service';
 export class StatsComponent implements OnInit {
 	@Input('height') height: number = 40;
 	@Input('color') color: string = '#007bff';
-	@Input('text-color') txcolor: string = '#ffffff';
+	@Input('text-color') txcolor: string = '#000000';
 
 	public pyro : string = "";
 	public userId: number = 123;
