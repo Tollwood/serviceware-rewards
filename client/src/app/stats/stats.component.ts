@@ -17,7 +17,6 @@ export class StatsComponent implements OnInit {
 	public currentUser: User;
 	public userInfo: User[];
 
-	tag: string = 'XP';
 	progressBarPercentageString: string;
 	progressBarPercentage: number = 0;
 	progressTargetBarPercentage: number = 0;

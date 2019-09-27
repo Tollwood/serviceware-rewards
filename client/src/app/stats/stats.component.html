@@ -1,23 +1,40 @@
-<div class="container-fluid" style="min-width: 250px;" [style.height]="height" (click)="openPoppy()">
-  <div class="pyro">
-    <div class="before"></div>
-    <div class="after"></div>
-  </div>
-  <div class="row">
-    <div>
-      <div class="avatar" style="position:relative">
-        <img class="userPicture" alt="" [src]="currentUser?.pictureUrl" [style.height]="height + 'px'" [style.width]="height + 'px'">
-        <app-sparkle class="sparkleApp" [size]="height * 1.6" style="position: absolute; z-index: 1;"
-            [ngStyle]="{ 'left': (height/5) + 'px', 'top': (-height/2) + 'px' }"></app-sparkle>
-        <app-helmet [imagePath]="helmetPath" class="helmetApp"></app-helmet>
-      </div>
-    </div>
-    <div class="col">
-      <div class="progress">
-        <div [class]="'progress-bar ' + progressBarClass" role="progressbar" aria-valuenow="currentUser.xp"
-          aria-valuemin="currentUser.rank.minXp" aria-valuemax="currentUser.rank.maxXp"
-          [ngStyle]="{ 'width': progressBarPercentageString }">
+<div style="min-width: 250px;"
+     [style.height]="height"
+     (click)="openPoppy()">
+    <div class="d-flex flex-row align-items-center">
+        <div class="pyro">
+            <div class="before"></div>
+            <div class="after"></div>
         </div>
-      </div>
+        <div class="avatar">
+            <img alt=""
+                 class="userPicture"
+                 [src]="currentUser?.pictureUrl"
+                 [style.height]="height + 'px'"
+                 [style.width]="height + 'px'">
+            <app-sparkle class="sparkleApp"
+                         [size]="height * 1.6"
+                         style="position: absolute; z-index: 1;"
+                         [ngStyle]="{ 'left': (height/5) + 'px', 'top': (-height/2) + 'px' }"></app-sparkle>
+            <app-helmet [imagePath]="helmetPath" class="helmetApp"></app-helmet>
+        </div>
+        <div class="flex-grow-1 ml-2">
+            <div class="d-flex flex-column">
+                <div class="progress">
+                    <div [class]="'progress-bar ' + progressBarClass"
+                         role="progressbar"
+                         aria-valuenow="currentUser.xp"
+                         aria-valuemin="currentUser.rank.minXp"
+                         aria-valuemax="currentUser.rank.maxXp"
+                         [ngStyle]="{ 'width': progressBarPercentageString }">
+                    </div>
+                </div>
+                <div class="d-flex flex-row justify-content-between small ml-2 mr-2" [style.color]="color" style="margin-bottom: -6px;">
+                    <div>{{ currentUser?.username }}</div>
+                    <div>{{ currentUser?.xp }} / {{ currentUser?.rank.maxXp }} XP</div>
+                    <div>{{ currentUser?.rank.rank }}</div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

@@ -18,7 +18,7 @@ import { SparkleComponent } from './stats/sparkle/sparkle.component';
 
 @NgModule({
 	declarations: [ AppComponent, StatsComponent, LeaderboardComponent, PoppyComponent, SparkleComponent, HelmetComponent, StoreComponent, ActivitiesComponent ],
-	imports: [ BrowserModule, AppRoutingModule, HttpClientModule, MatDialogModule, BrowserAnimationsModule ],
+	imports: [ BrowserModule, AppRoutingModule, HttpClientModule, MatDialogModule, BrowserAnimationsModule, MatTabsModule ],
 	bootstrap: [],
 	providers: [ { provide: APP_BASE_HREF, useValue: '/' } ],
 	entryComponents: [ StatsComponent, PoppyComponent, LeaderboardComponent, ActivitiesComponent ]
