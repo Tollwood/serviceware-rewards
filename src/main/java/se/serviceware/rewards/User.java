@@ -19,6 +19,5 @@ public class User {
     private int xp;
     @Transient
     private Rank rank;
-    @Builder.Default
-    private String pictureUrl = "https://farm4.staticflickr.com/3247/2765310447_9490cb6780_m.jpg";
+    private String pictureUrl;
 }
