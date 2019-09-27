@@ -10,7 +10,7 @@ import { Activity } from '../models/activity.model';
 export class StatsService {
 	constructor(private httpClient: HttpClient) {}
 
-	public userName = 'Jens';
+	public userName = 'Joe';
 	
 	public getStats(userId: number) {
         return this.httpClient

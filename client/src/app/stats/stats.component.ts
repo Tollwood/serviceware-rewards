@@ -22,10 +22,10 @@ export class StatsComponent implements OnInit {
 	progressTargetBarPercentage: number = 0;
 	leaderboardRank: number = 2;
 	helmetPath : string;
-	helmetRank1 : string = "./assets/crown.png"; 
-	helmetRank2 : string = "./assets/viking.png"; 
-	helmetRank3 : string = "./assets/strawhat.png"; 
-	helmetRankOther : string = "./assets/blank.png"; 
+	helmetRank1 : string = "/assets/crown.png"; 
+	helmetRank2 : string = "/assets/viking.png"; 
+	helmetRank3 : string = "/assets/strawhat.png"; 
+	helmetRankOther : string = "/assets/blank.png"; 
 
 	
 	constructor(private statsService: StatsService, private _dialog: MatDialog) {
@@ -53,7 +53,7 @@ export class StatsComponent implements OnInit {
 			this.xpUpdate();
 			this.helmetUpdate();			
 		});
-		this.statsService.getLeaderboard().subscribe(x => {this.userInfo = x; this.leaderboardRank = this.userInfo.indexOf(this.currentUser);});
+		this.statsService.getLeaderboard().subscribe(x => {this.userInfo = x; });
 	}
 
 	progressBarClass: string = '';
@@ -68,6 +68,9 @@ export class StatsComponent implements OnInit {
 	}
 
 	public helmetUpdate(){
+		this.leaderboardRank = this.userInfo.findIndex((x) => (x.username = this.currentUser.username)) + 1;
+		console.log(this.userInfo);
+		console.log(this.leaderboardRank);
 		switch(this.leaderboardRank) { 
 			case 1: { 
 				this.helmetPath = this.helmetRank1;
