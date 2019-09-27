@@ -14,7 +14,8 @@ export class StatsComponent implements OnInit {
 	@Input('color') color: string = '#007bff';
 	@Input('text-color') txcolor: string = '#ffffff';
 
-	userId: number = 123;
+	public pyro : string = "";
+	public userId: number = 123;
 	public currentUser: User;
 	public userInfo: User[];
 
