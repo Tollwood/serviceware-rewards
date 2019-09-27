@@ -14,7 +14,9 @@ export class StatsComponent implements OnInit {
 	@Input('color') color: string = '#007bff';
 
 	userId: number = 123;
-	currentUser: User;
+	public currentUser: User;
+	public userInfo: User[];
+
 	tag: string = 'XP';
 	progressBarPercentageString: string;
 	progressBarPercentage: number = 0;
@@ -50,9 +52,9 @@ export class StatsComponent implements OnInit {
 				100 /
 				(this.currentUser.rank.maxXp - this.currentUser.rank.minXp);
 			this.xpUpdate();
-			this.helmetUpdate();
-			
+			this.helmetUpdate();			
 		});
+		this.statsService.getLeaderboard().subscribe(x => {this.userInfo = x; this.leaderboardRank = this.userInfo.indexOf(this.currentUser);});
 	}
 
 	progressBarClass: string = '';
