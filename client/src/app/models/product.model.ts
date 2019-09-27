@@ -1,9 +1,8 @@
 export class Product {
-	public id: number;
+	public leaderboardrank: number;
     public name: string;
     public description: string;
     public imagePath: string;
-	public price: number;
 
 	constructor(init?: Partial<Product>) {
 		Object.assign(this, init);

@@ -11,27 +11,26 @@ export class ProductsService {
 
 	public getProducts() {
 		return of(
-			[new Product({
-				id: 123,
-        name: 'THE Mug',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vehicula nunc nibh, sed viverra turpis lacinia ac. Morbi feugiat, magna ut porttitor volutpat, est sem ornare quam, vel feugiat nisi est at sem. Suspendisse nunc risus, vulputate vitae libero ut, ultrices volutpat dolor. ',
-        imagePath: 'https://images1.shirtinator.net/services/image/get/genre/27/id/1183/motiveId/64755/cid/2/vid/1/width/0/height/700/trim/true//zoom/0/langId/1/img/cookie-a-day-keeps-the-sadness-a-tasse-S66d0f918.jpg',
-	      price: 123
-      }),
-      new Product({
-				id: 123,
-        name: 'Magic Pens',
-        description: 'Donec leo elit, dapibus sed tempor sed, tristique id arcu. Aliquam gravida dui sed facilisis gravida.',
-        imagePath: 'https://w5.giffitsstatic.com/pics/c504/287880_1.jpg',
-	      price: 123
-      }),
-      new Product({
-				id: 123,
-        name: 'Pacificator',
-        description: 'Mit dem Nerf N-Strike Elite XD Rhino Fire und seinen zwei automatischen Bodenoffensive mit dem integrierbaren Standbein. Du entscheidest!',
-        imagePath: 'https://www.alternate.de/p/230x230/1/Hasbro_Nerf_N_Strike_Elite_Rhino_Fire__Nerf_Gun@@1sshn03h.jpg',
-	      price: 123
-			})]
+			[
+				new Product({
+					leaderboardrank: 1,
+					name: 'Pacificator',
+					description: 'Because you watched too many movies and and want to feel all powerful.',
+					imagePath: 'https://www.alternate.de/p/230x230/1/Hasbro_Nerf_N_Strike_Elite_Rhino_Fire__Nerf_Gun@@1sshn03h.jpg',
+				}),
+				new Product({
+					leaderboardrank: 2,
+					name: 'Vacation package',
+					description: 'You deserve it... you worked so hard that you haven\'t seen the sun this last month!',
+					imagePath: 'https://www.fakeavacation.com/wp-content/uploads/2017/12/Pic_2_full-4.jpg',
+				}),
+				new Product({
+					leaderboardrank: 3,
+					name: 'Magic Tissue',
+					description: 'Because you almost made it to the top 3 and worked hard, but it was simply not enough.',
+					imagePath: 'https://images.homedepot-static.com/productImages/23ebe44d-3e56-42db-a16e-f4a205d81f3d/svn/kleenex-facial-tissues-kcc03076-64_1000.jpg',
+				})
+			]
 		);
 		// return this.httpClient
 		//   .get('<URL here>')

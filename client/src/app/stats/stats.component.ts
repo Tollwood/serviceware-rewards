@@ -51,6 +51,7 @@ export class StatsComponent implements OnInit {
 				100 /
 				(this.currentUser.rank.maxXp - this.currentUser.rank.minXp);
 			this.xpUpdate();
+			this.xpNewRank();
 			// this.helmetUpdate();
 		});
 		this.statsService.getLeaderboard().subscribe((x) => {
@@ -59,6 +60,7 @@ export class StatsComponent implements OnInit {
 	}
 
 	progressBarClass: string = '';
+	currentRank: string = '';
 	public xpUpdate(): void {
 		if (this.progressBarPercentage !== this.progressTargetBarPercentage) {
 			this.progressBarClass = 'progress-bar-striped progress-bar-animated';
@@ -68,6 +70,15 @@ export class StatsComponent implements OnInit {
 			this.progressBarClass = '';
 		}
 	}
+
+	public xpNewRank(): void {
+		if (this.currentRank != '' && this.currentRank != this.currentUser.rank.rank) {
+			this.pyro = 'pyro';
+			setTimeout(() => { this.pyro = ''; }, 10000, 'funky');
+		}
+		this.currentRank = this.currentUser.rank.rank;
+	} 
+
 
 	public helmetUpdate() {
 		this.leaderboardRank = this.userInfo.findIndex((x) => x.username == this.currentUser.username) + 1;
