@@ -1,12 +1,12 @@
 <div class="container-fluid">
-  <div class="row" *ngFor="let product of products; index as i">
-    <p class="text" style="text-align: center; margin: auto; margin-left: 10px;">#{{ product.leaderboardrank }}</p>
-    <div class="product-image">
-      <img class="img-fluid" src="{{ product.imagePath }}" alt="Card image cap">
+    <div class="row" *ngFor="let product of products; index as i" style="height: 100px;">
+        <p class="text" style="text-align: center; margin: auto; margin-left: 10px;">#{{ product.leaderboardrank }}</p>
+        <div class="product-image">
+            <img class="img-fluid" src="{{ product.imagePath }}" alt="Card image cap" style="height: 85px;">
+        </div>
+        <div class="col-sm">
+            <p class="title">{{ product.name }}</p>
+            <p class="text">{{ product.description }}</p>
+        </div>
     </div>
-    <div class="col-sm">
-      <p class="title">{{ product.name }}</p>
-      <p class="text">{{ product.description }}</p>
-    </div>
-  </div>
 </div>
