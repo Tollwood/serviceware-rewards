@@ -1,4 +1,4 @@
-.flex-container {
+.user-name-container {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -6,7 +6,10 @@
 
 .user-image {
     height: 42px;
+    width: 42px;
     margin-right: 10px;
+    border-radius: 50%;
+    object-fit: contain;
 }
 
 .user-rank {

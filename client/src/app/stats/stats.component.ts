@@ -22,12 +22,12 @@ export class StatsComponent implements OnInit {
 	progressTargetBarPercentage: number = 0;
 	leaderboardRank: number = 2;
 	helmetPath : string;
-	helmetRank1 : string = "/assets/crown.png"; 
-	helmetRank2 : string = "/assets/viking.png"; 
-	helmetRank3 : string = "/assets/strawhat.png"; 
-	helmetRankOther : string = "/assets/blank.png"; 
+	helmetRank1 : string = "/assets/crown.png";
+	helmetRank2 : string = "/assets/viking.png";
+	helmetRank3 : string = "/assets/strawhat.png";
+	helmetRankOther : string = "/assets/blank.png";
 
-	
+
 	constructor(private statsService: StatsService, private _dialog: MatDialog) {
 	}
 
@@ -51,7 +51,7 @@ export class StatsComponent implements OnInit {
 				100 /
 				(this.currentUser.rank.maxXp - this.currentUser.rank.minXp);
 			this.xpUpdate();
-			this.helmetUpdate();			
+			this.helmetUpdate();
 		});
 		this.statsService.getLeaderboard().subscribe(x => {this.userInfo = x; });
 	}
@@ -68,26 +68,26 @@ export class StatsComponent implements OnInit {
 	}
 
 	public helmetUpdate(){
-		this.leaderboardRank = this.userInfo.findIndex((x) => (x.username = this.currentUser.username)) + 1;
+		this.leaderboardRank = this.userInfo.findIndex((x) => (x.username === this.currentUser.username)) + 1;
 		console.log(this.userInfo);
 		console.log(this.leaderboardRank);
-		switch(this.leaderboardRank) { 
-			case 1: { 
+		switch(this.leaderboardRank) {
+			case 1: {
 				this.helmetPath = this.helmetRank1;
-			   	break; 
-			} 
-			case 2: { 
+			   	break;
+			}
+			case 2: {
 				this.helmetPath = this.helmetRank2;
-			   break; 
-			} 
+			   break;
+			}
 			case 3: {
 				this.helmetPath = this.helmetRank3;
 				break;
 			}
-			default: { 
+			default: {
 				this.helmetPath = this.helmetRankOther;
-			   break; 
-			} 
-		 } 
+			   break;
+			}
+		 }
 	}
 }

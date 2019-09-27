@@ -14,10 +14,11 @@ import { HelmetComponent } from './stats/helmet/helmet.component';
 import { StoreComponent } from './store/store.component';
 import { StatsComponent } from './stats/stats.component';
 import { SparkleComponent } from './stats/sparkle/sparkle.component';
+import { TranslatePipe } from './directives/translate.pipe';
 
 
 @NgModule({
-	declarations: [ AppComponent, StatsComponent, LeaderboardComponent, PoppyComponent, SparkleComponent, HelmetComponent, StoreComponent, ActivitiesComponent ],
+	declarations: [ AppComponent, StatsComponent, LeaderboardComponent, PoppyComponent, SparkleComponent, HelmetComponent, StoreComponent, ActivitiesComponent, TranslatePipe ],
 	imports: [ BrowserModule, AppRoutingModule, HttpClientModule, MatDialogModule, BrowserAnimationsModule, MatTabsModule ],
 	bootstrap: [],
 	providers: [ { provide: APP_BASE_HREF, useValue: '/' } ],

@@ -22,12 +22,12 @@ $primary-color: #333;
 
 .avatar {
   position: relative;
-  transform: scale(1); 
+  transform: scale(1);
 }
 
 .avatar .userPicture {
-  vertical-align: middle;
   border-radius: 50%;
+  object-fit: contain;
   border: 1px solid gray;
 }
 
