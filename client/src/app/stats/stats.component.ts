@@ -37,11 +37,7 @@ export class StatsComponent implements OnInit {
 
 	public openPoppy(): void {
 		this._dialog.open(PoppyComponent, {
-<<<<<<< HEAD
-			width: '500px',
-=======
 			width: '600px',
->>>>>>> Store
 			autoFocus: false
 		});
 	}
@@ -62,15 +58,9 @@ export class StatsComponent implements OnInit {
 	progressBarClass: string = '';
 	public xpUpdate(): void {
 		if (this.progressBarPercentage !== this.progressTargetBarPercentage) {
-			this.progressBarClass = 'progress-bar-striped progress-bar-animated';
-			this.progressBarPercentage =
-				this.progressBarPercentage +
-				Math.ceil((this.progressTargetBarPercentage - this.progressBarPercentage) / 10);
-			this.progressBarPercentageString = this.progressBarPercentage + '%';
-			setTimeout(() => {
-				this.xpUpdate();
-			}, 10);
->>>>>>> Store
+			this.progressBarClass = "progress-bar-striped progress-bar-animated";
+			this.progressBarPercentage = this.progressTargetBarPercentage;
+			this.progressBarPercentageString = this.progressBarPercentage + "%";
 		} else {
 			this.progressBarClass = '';
 		}
